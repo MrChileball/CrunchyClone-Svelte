@@ -798,7 +798,6 @@ p{
       padding: 3.5rem 5rem;
     }
     body{
-        font-size: 42px; /*1rem = 10px*/
         margin: 0px;
         height: 100%;
         
@@ -811,13 +810,7 @@ p{
         width: 36rem;
         height: auto;
     }
-    .nav-container{
-        display: flex;
-        height: 100%;
-        max-height: 4em;
-        position: relative;
-        top: 0.5em;
-    }
+    
     .left-icons {
       display: flex;
       align-items: center;
