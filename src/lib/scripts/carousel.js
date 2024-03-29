@@ -77,6 +77,7 @@ if (typeof window !== 'undefined'){
             /**
              * Toggle arrow handler.
              */
+            
             const toggleArrows = () => {
                 if ( content.scrollLeft > maxScrollWidth - 10 ) {
                     nextButton.classList.add( 'disabled' );

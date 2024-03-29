@@ -247,7 +247,7 @@ p{
 .icon{
     padding-top: 1rem;
     padding-bottom: 1rem;
-    width: clamp(1.7em, 1em + 1.2vw, 2.7em);
+    width: clamp(1.7em, 1em + 1.2vw, 4rem);
     height: auto;
     transition: all var(--custom-transition-03s) ease;  
 }
@@ -256,21 +256,7 @@ p{
   transition: all var(--custom-transition-03s) ease;
   transform: translateY(-5px);
 }
-.icon-logo-mobile{
-    width: clamp(1.1em, 1.2em + 2vw, 4em);
-    height: auto;
-    transition: all 0.7s ease;
-}
-.icon-logo-desktop{
-    width: clamp(4em, 9em + 1.6vw, 12em);
-    height: auto;
-    display: none;
-    transition: all var(--custom-transition-03s) ease;
-}
-.icon-logo-mobile:hover,
-.icon-logo-desktop:hover{
-    filter: invert(0.5) brightness(10);
-}
+
 
 /*---------------------PROPIEDADES DE LA NAVBAR---------------------*/
 #navbar-container{ /* INSERT CONTENT HERE */
@@ -553,7 +539,7 @@ p{
 
 /*Página PRINCIPAL- CAROUSEL FOR SERIES AND POSTS*/
 .container {
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -646,6 +632,10 @@ p{
 
   border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, 8px);
   cursor: pointer;
+}
+.carousel__item{
+  max-width: 240px;
+  max-height: 280px;
 }
 .carousel .carousel__item a:hover {
   background: var(--custom-rich-black);
@@ -773,14 +763,6 @@ p{
 }
 
   @media (min-width:800px){
-    .icon-logo-desktop{
-        display:block;
-
-    }
-    .icon-logo-mobile{
-        display: none;
-
-    }
     .banner-desktop{
         display: block;
     }
@@ -801,10 +783,6 @@ p{
         margin: 0px;
         height: 100%;
         
-    }
-    .icon {
-      width: 6rem; /* Tamaño de los iconos en pantallas de alta resolución */
-      height: auto;
     }
     .icon-logo-desktop{
         width: 36rem;
