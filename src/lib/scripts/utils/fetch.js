@@ -32,7 +32,7 @@ export const fetchBasicAnimeData = async (sortType) => {
 export const fetchPaginatedAnimeData = async (sortType, pageNo) => {
 	const query = gql`
     {
-      Page(perPage: 10, page: ${pageNo}) {
+      Page(perPage: 7, page: ${pageNo}) {
           media(sort: ${sortType}, type: ANIME, status: FINISHED) {
             id
             season
