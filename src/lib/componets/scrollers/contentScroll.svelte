@@ -41,6 +41,32 @@
                         behavior: 'smooth'
                     });
                 });
+                            // Añadir desplazamiento con el mouse
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            content.addEventListener('mousedown', (e) => {
+                isDown = true;
+                startX = e.pageX - content.offsetLeft;
+                scrollLeft = content.scrollLeft;
+            });
+
+            content.addEventListener('mouseleave', () => {
+                isDown = false;
+            });
+
+            content.addEventListener('mouseup', () => {
+                isDown = false;
+            });
+
+            content.addEventListener('mousemove', (e) => {
+                if(!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - content.offsetLeft;
+                const walk = (x - startX) * 3; //scroll-fast
+                content.scrollLeft = scrollLeft - walk;
+            });
             }
     });
 </script>

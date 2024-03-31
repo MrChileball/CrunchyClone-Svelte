@@ -1,6 +1,8 @@
 :root{
     /* Paleta de colores */
     --custom-white: #f1e9daff;
+    --custom-white-200: #c1c1c1;
+    --custom-white-300: #83807d;
     --custom-light-coral: #f67e7dff;
     --custom-sunglow: #fdca40ff;
     --custom-tangerine: #f18805ff;
@@ -8,6 +10,7 @@
     --custom-red: #ba1f33ff;
     --custom-carmine: #91171fff;
     --sea-green: #008148ff;
+    --custom-light-dark: #3f3e46;
     --custom-oxford-blue: #313131;
     --custom-black: #212121;
     --custom-rich-black: #161515;
@@ -17,11 +20,10 @@
     --titulo: 1rem;
 
     /* Transiciones personalizadas */
-    --custom-transition-04s: 0.4s;
-    --custom-transition-03s: 0.3s;
-    --custom-transition-04s: 0.4s;
+    --custom-transition-03s: 0.25s;
+    --custom-transition-04s: 0.32s;
 
-    --custom-margin-2020: 2% 0% 2% 0%;
+    --custom-margin-2020: 12px;
 
     --ease-slider: cubic-bezier(0.4, 0, 0.2, 1);
     --ease-timeline: cubic-bezier(0.71, 0.21, 0.3, 0.95);
@@ -102,6 +104,8 @@ body{
 }
 h1{
     font-weight: 700;
+    display: flex;
+    align-items: center;
 
 }
 h3, h4, h5{
@@ -237,7 +241,7 @@ p{
   border: none;
   border-radius: 4px;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   cursor: pointer;
@@ -247,14 +251,19 @@ p{
 .icon{
     padding-top: 1rem;
     padding-bottom: 1rem;
-    width: clamp(1.7em, 1em + 1.2vw, 4rem);
     height: auto;
     transition: all var(--custom-transition-03s) ease;  
 }
 .icon:hover {
   filter: invert(0.5) grayscale(100%);
-  transition: all var(--custom-transition-03s) ease;
-  transform: translateY(-5px);
+  transition: all 0.25s ease;
+  transform: rotate(-25deg);
+}
+.icon:active{
+  stroke: var(--custom-auburn);
+    filter: brightness(2.2);
+    transition: all 0.15s ease;
+    transform: rotate(-35deg);
 }
 
 
@@ -548,6 +557,7 @@ p{
 }
 .carousel h2 {
   margin: 0;
+  color: var(--custom-white-200);
 }
 .carousel a {
   text-decoration: none;
@@ -565,11 +575,7 @@ p{
     border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, 4px);
     width: 160px;
 }
-.carousel h3 {
-  font-size: 16px;
-  margin: 0;
-  margin-bottom: 4px;
-}
+
 .carousel span {
   color: #a7a7a7;
   font-size: 14px;
@@ -611,36 +617,12 @@ p{
   grid-gap: 1px;
   grid-auto-flow: column;
   list-style: none;
+  scrollbar-width: auto;
+  
 
 }
-.carousel .carousel__content::-webkit-scrollbar {
-  display: none;
-}
-.carousel .carousel__item .carousel__description {
-  width: 100%;
-}
-.carousel .carousel__item a {
-  display: flex;
-  justify-content: center;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  user-select: none;
-  margin: 10px 0px;
-  padding: 16px;
 
-  border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, 8px);
-  cursor: pointer;
-}
-.carousel__item{
-  max-width: 240px;
-  max-height: 280px;
-}
-.carousel .carousel__item a:hover {
-  background: var(--custom-rich-black);
-  transition: all 0.2s ease-in;
-}
+
 .carousel .carousel__controls {
   display: grid;
   grid-auto-flow: column;
@@ -676,9 +658,7 @@ p{
 
 #main {
 	background: url(https://shingekionline.netlify.app/images/homepage/vinland1.webp) center center / cover;
-	background-size: cover, cover;
-	background-position: center, center;
-	min-height: 65vh;
+	min-height: 45vh;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -686,7 +666,7 @@ p{
   margin: 0;
   padding: 0;
   border-width: 0;
-  filter: grayscale(0.5);
+  filter: grayscale(0.28);
 
 }
 /* linear-gradient(to bottom, transparent , rgba(33, 33, 33, 0.966)),  */
@@ -879,7 +859,8 @@ p{
 
 /* width */
 ::-webkit-scrollbar {
-  width: auto;
+  width: 12px;
+  height: 12px;
 }
 
 
@@ -892,13 +873,11 @@ p{
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #535353; 
-  border-radius: 0.4em;
-  transition: all 0.3s ease;
+  border-radius: 6px;
+  transition: 0.15s all ease;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  transition: all 0.3s ease;
-  margin: 2%;
-  background: #bdbdbd; 
+  background: var(--custom-light-coral); 
 }
