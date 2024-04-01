@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 	import ItemScroller from './../lib/componets/atoms/itemScroller.svelte';
     // @ts-ignore
     import ShareButton from "$lib/componets/buttons/shareButton.svelte";
@@ -7,21 +7,25 @@ import { fetchPaginatedAnimeData } from '$lib/scripts/utils/fetch';
 
     import Carousel from "$lib/componets/scrollers/contentScroll.svelte";
     import TrendingSerie from '$lib/componets/categories/trendingSerie.svelte';
-   
 
-    export let data;
-	let { trendingAnime } = data;
+
+    let trendingAnime =[];
+	  let trendingAnimePageNo = 1;
+    const loadPopularAnime = async () => {
+      console.log(trendingAnime);
+      trendingAnimePageNo++;
+
+      const res = await fetchPaginatedAnimeData("POPULARITY_DESC", trendingAnimePageNo);
+      console.log(res);
+      console.log(trendingAnime);
+      // @ts-ignore
+      trendingAnime = res;
+      console.log(trendingAnime);
+	};
     
-
- 
-
+$: loadPopularAnime();
   
-
-
 </script>
-
-
-
 
     <Navbar></Navbar>
     <div id="main" >

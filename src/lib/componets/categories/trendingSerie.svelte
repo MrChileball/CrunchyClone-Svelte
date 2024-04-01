@@ -3,17 +3,10 @@
     import { fetchPaginatedAnimeData } from '$lib/scripts/utils/fetch';
     import ItemScroller from '../atoms/itemScroller.svelte';
     
-    export let trendingAnime;
-	let trendingAnimePageNo = 1;
+    export let trendingAnime =[];
+	export let trendingAnimePageNo = 1;
 
-	const loadPopularAnime = async () => {
-		trendingAnimePageNo++;
-
-		const res = await fetchPaginatedAnimeData("POPULARITY_DESC", trendingAnimePageNo);
-		// @ts-ignore
-		trendingAnime = trendingAnime.concat(res);
-	};
-loadPopularAnime();
+	
 
 
  // @ts-ignore
