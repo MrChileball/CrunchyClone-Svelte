@@ -1,5 +1,5 @@
 <script>
-	import IconSmall from './../atoms/buttons/iconSmall.svelte';
+	import IconSmall from '../atoms/buttons/iconSmall.svelte';
 import ShareButton from "../buttons/shareButton.svelte";
 import IconLogo from "../icons/iconLogo.svelte";
 

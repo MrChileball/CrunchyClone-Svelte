@@ -1,8 +1,9 @@
 <script>
+// @ts-nocheck
+
 	import ItemScroller from './../lib/componets/atoms/itemScroller.svelte';
     // @ts-ignore
     import ShareButton from "$lib/componets/buttons/shareButton.svelte";
-import Navbar from "$lib/componets/navbar/navbar.svelte";
 import { fetchPaginatedAnimeData } from '$lib/scripts/utils/fetch';
 
     import Carousel from "$lib/componets/scrollers/contentScroll.svelte";
@@ -11,29 +12,41 @@ import { fetchPaginatedAnimeData } from '$lib/scripts/utils/fetch';
 
     let trendingAnime =[];
 	  let trendingAnimePageNo = 1;
+  
     const loadPopularAnime = async () => {
-      console.log(trendingAnime);
-      trendingAnimePageNo++;
+
 
       const res = await fetchPaginatedAnimeData("POPULARITY_DESC", trendingAnimePageNo);
       console.log(res);
-      console.log(trendingAnime);
+
       // @ts-ignore
-      trendingAnime = res;
+      trendingAnime = [...trendingAnime, ...res];
       console.log(trendingAnime);
 	};
     
-$: loadPopularAnime();
+  $: {
+    //ejecuta la función al arrancar la página
+        loadPopularAnime();
+    }
+
+    // Función para actualizar trendingAnimePageNo y recargar los datos
+    const nextPage = () => {
+        trendingAnimePageNo++;
+        console.log(trendingAnimePageNo);
+        loadPopularAnime();
+    };
   
 </script>
 
-    <Navbar></Navbar>
+    
     <div id="main" >
       
       <h1>
         新大久保へようこそ
       </h1>
     </div>
+
+    <button on:click={() => {nextPage()}}></button>
 
     <TrendingSerie {trendingAnime}></TrendingSerie>
 

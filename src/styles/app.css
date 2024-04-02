@@ -289,13 +289,13 @@ p{
 .left-icons {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 12px;
     padding-left: 1.1vw;
   }
   .right-icons {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 12px;
     padding-left: 1.1vw;
   }
   .banner-mobile{
@@ -548,7 +548,7 @@ p{
 
 /*Página PRINCIPAL- CAROUSEL FOR SERIES AND POSTS*/
 .container {
-  max-width: 1280px;
+  max-width: 1920px;
   margin: 0 auto;
 }
 
@@ -769,16 +769,7 @@ p{
         height: auto;
     }
     
-    .left-icons {
-      display: flex;
-      align-items: center;
-      gap: 4rem;
-    } 
-    .right-icons {
-      display: flex;
-      align-items: center;
-      gap: 4rem;
-    }
+
   .padding-20 {
     padding-top: 12rem;
     padding-bottom: 15rem;

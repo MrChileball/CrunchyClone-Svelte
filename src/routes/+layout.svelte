@@ -4,6 +4,8 @@
 
     import { onMount } from "svelte";
     import "../styles/app.css";
+    import Navbar from "$lib/componets/sections/navbar.svelte";
+    import Footer from "$lib/componets/sections/footer.svelte";
     // @ts-nocheck
 
 
@@ -23,9 +25,8 @@
 </script>
 
 
-
-<slot>
-
-</slot>
+<Navbar></Navbar>
+<slot></slot>
+<Footer></Footer>
 
 
