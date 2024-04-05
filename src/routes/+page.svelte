@@ -4,37 +4,36 @@
 	import ItemScroller from './../lib/componets/atoms/itemScroller.svelte';
     // @ts-ignore
     import ShareButton from "$lib/componets/buttons/shareButton.svelte";
-import { fetchPaginatedAnimeData } from '$lib/scripts/utils/fetch';
+import { fetchSearchResults } from '$lib/scripts/utils/fetch';
 
     import Carousel from "$lib/componets/scrollers/contentScroll.svelte";
     import TrendingSerie from '$lib/componets/categories/trendingSerie.svelte';
 
 
-    let trendingAnime =[];
-	  let trendingAnimePageNo = 1;
-  
-    const loadPopularAnime = async () => {
+   let query = "";
 
+   $: console.log(query);
 
-      const res = await fetchPaginatedAnimeData("POPULARITY_DESC", trendingAnimePageNo);
+   let searchResults =[];
+
+   
+
+    const searchQuery = async () =>{
+      const res = await fetchSearchResults(query);
       console.log(res);
 
-      // @ts-ignore
-      trendingAnime = [...trendingAnime, ...res];
-      console.log(trendingAnime);
-	};
-    
-  $: {
-    //ejecuta la función al arrancar la página
-        loadPopularAnime();
-    }
+      searchResults = res;
 
-    // Función para actualizar trendingAnimePageNo y recargar los datos
-    const nextPage = () => {
-        trendingAnimePageNo++;
-        console.log(trendingAnimePageNo);
-        loadPopularAnime();
-    };
+    }
+    function handleKeyPress(event) {
+    if (event.key == 'Enter') {
+      searchQuery();
+    }
+  }
+    $: {
+    //ejecuta la función al arrancar la página
+        searchQuery();
+    }
   
 </script>
 
@@ -46,9 +45,19 @@ import { fetchPaginatedAnimeData } from '$lib/scripts/utils/fetch';
       </h1>
     </div>
 
-    <button on:click={() => {nextPage()}}></button>
+    
 
-    <TrendingSerie {trendingAnime}></TrendingSerie>
+    <TrendingSerie></TrendingSerie>
+
+    <input bind:value={query} on:click={() => { searchQuery() }} on:keydown={handleKeyPress }  type="text">
+    <Carousel title="Busqueda">
+      <div slot="title">Busqueda</div>
+      {#each searchResults as results, i (i) }
+        <ItemScroller img="{results.coverImage.large}" ep="{results.episodes}" score="{results.meanScore}">
+          {results.title.english}
+        </ItemScroller>
+      {/each}
+    </Carousel>
 
               
     <!--<section class="key-art">
