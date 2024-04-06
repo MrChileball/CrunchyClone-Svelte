@@ -618,6 +618,7 @@ p{
   grid-auto-flow: column;
   list-style: none;
   scrollbar-width: auto;
+  justify-content: start;
   
 
 }

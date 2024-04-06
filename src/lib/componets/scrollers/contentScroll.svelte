@@ -2,7 +2,6 @@
     import { onMount } from "svelte";
 
     onMount(() =>{
-        console.log("SEXO");
             const COMPONENT_SELECTOR = '.carousel__wrapper';
             const CONTROLS_SELECTOR = '.carousel__controls';
             const CONTENT_SELECTOR = '.carousel__content';

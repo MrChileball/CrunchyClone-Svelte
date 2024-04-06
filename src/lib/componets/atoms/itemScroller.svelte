@@ -31,9 +31,6 @@
 
 
 <style>
-    .carousel .carousel__item .carousel__description {
-  width: 100%;
-}
 .carousel .carousel__item a {
   display: flex;
   justify-content: center;
@@ -47,10 +44,12 @@
 
   border-radius: clamp(0px, ((100vw - 4px) - 100%) * 9999, 8px);
   cursor: pointer;
+  justify-content: start;
 }
 .carousel__item{
   max-width: 240px;
-  
+  max-height: 375px;
+
 }
 .carousel .carousel__item a:hover {
   background: var(--custom-rich-black);
