@@ -61,6 +61,7 @@
   margin-bottom: 4px;
   font-weight:700;
   color: var(--custom-white-200);
+  max-width: 150px;
 }
 .carousel__subtitle{
     color: var(--custom-white-300);

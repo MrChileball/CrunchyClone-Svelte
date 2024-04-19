@@ -5,8 +5,8 @@
     
 
 	
-  let trendingAnime =[];
-	  let trendingAnimePageNo = 1;
+  export let trendingAnime = [];
+	  export let trendingAnimePageNo = 1;
   
     const loadPopularAnime = async () => {
 

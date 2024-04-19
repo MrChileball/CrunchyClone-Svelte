@@ -48,17 +48,12 @@ import { fetchSearchResults } from '$lib/scripts/utils/fetch';
     
 
     <TrendingSerie></TrendingSerie>
+    <TrendingSerie></TrendingSerie>
 
-    <input bind:value={query} on:click={() => { searchQuery() }} on:keydown={handleKeyPress }  type="text">
-    <Carousel title="Busqueda">
-      <div slot="title">Busqueda</div>
-      {#each searchResults as results, i (i) }
-        <ItemScroller img="{results.coverImage.large}" ep="{results.episodes}" score="{results.meanScore}">
-          {results.title.english}
-        </ItemScroller>
-      {/each}
-    </Carousel>
+  
 
+
+    
               
     <!--<section class="key-art">
       <div class="main-background">

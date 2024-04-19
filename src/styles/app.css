@@ -19,6 +19,12 @@
 
     --titulo: 1rem;
 
+    --border-radius-xl: 16px;
+    --border-radius-l: 12px;
+    --border-radius-m: 10px;
+    --border-radius-s: 8px;
+    --border-radius-xs: 6px;
+
     /* Transiciones personalizadas */
     --custom-transition-03s: 0.25s;
     --custom-transition-04s: 0.32s;
@@ -128,6 +134,13 @@ a {
   }
 p{
     font-weight: 300;
+}
+input{
+  border-radius: var(--border-radius-xl);
+  padding: 6px 12px;
+  margin: 4px;
+  background: var(--custom-light-dark);
+  color: var(--custom-white-200);
 }
 
 /*--------------------- PADDINGS ---------------------*/
@@ -553,7 +566,7 @@ p{
 }
 
 .carousel {
-  padding: 2vw;
+  padding: 24px;
 }
 .carousel h2 {
   margin: 0;
