@@ -6,7 +6,8 @@
     import "../styles/app.css";
     import Navbar from "$lib/componets/sections/navbar.svelte";
     import Footer from "$lib/componets/sections/footer.svelte";
-    import { fly } from 'svelte/transition'
+    import { fly } from 'svelte/transition';
+    import { fade } from 'svelte/transition';
     // @ts-nocheck
 
 
@@ -35,7 +36,7 @@
 {#key data.url}
 
         <div class="base" in:fly={{ x: -200, duration: 300, delay: 300}}
-        out:fly={{ duration: 300}} >
+        out:fade={{ duration: 300}} >
             <slot></slot>
         </div>
 
