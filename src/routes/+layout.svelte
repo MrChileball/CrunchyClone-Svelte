@@ -6,10 +6,11 @@
     import "../styles/app.css";
     import Navbar from "$lib/componets/sections/navbar.svelte";
     import Footer from "$lib/componets/sections/footer.svelte";
+    import { fly } from 'svelte/transition'
     // @ts-nocheck
 
 
-    onMount(async () => {
+    /*onMount(async () => {
     // Llamar a la función cuando el DOM esté listo
 
         setTimeout(() => {
@@ -20,13 +21,33 @@
 
 
     });
+    */
+    export let data;
 
 
 </script>
 
 
-<Navbar></Navbar>
-<slot></slot>
+{#key data.url}
+
+    <div 
+    in:fly="{{ y: -50, duration: 250, delay: 300 }}"
+    out:fly="{{ y: -50, duration: 250 }}" 
+    >
+        <Navbar></Navbar>
+        <div class="base">
+            <slot></slot>
+        </div>
+    </div>
+
+{/key}
+
+
+<style>
+    .base{
+        padding: 24px;
+    }
+</style>
 <Footer></Footer>
 
 

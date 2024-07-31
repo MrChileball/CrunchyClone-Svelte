@@ -17,3 +17,9 @@ export const load = async ({ setHeaders }) => {
 		favouriteAnime
 	};*/
 };
+export function load({ url }) {
+	return {
+	  url: url.pathname,
+	}
+  }
+  

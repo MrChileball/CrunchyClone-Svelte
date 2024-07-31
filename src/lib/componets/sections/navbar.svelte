@@ -50,6 +50,7 @@ import IconLogo from "../icons/iconLogo.svelte";
 
 
 <style>
+
   .nav-container{
     position: -webkit-sticky; /* Safari */
     position: sticky;
@@ -57,10 +58,16 @@ import IconLogo from "../icons/iconLogo.svelte";
     min-height: clamp(32px, 2rem + 2vw, 3rem);
     padding: 8px;
     z-index: 100;
-    box-shadow: rgba(0, 0, 0, 0.8) 0px 3px 40px;
+    box-shadow: rgba(0, 0, 0, 0.75) 0px 3px 12px;
     background-color: var(--custom-rich-black);
     display: flex;
     height: 100%;
+    padding: 0.25em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--border-radius-xs);
+    border-radius: var(--border-radius-s);
   }
 
 

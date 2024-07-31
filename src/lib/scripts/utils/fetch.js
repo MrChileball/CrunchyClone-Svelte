@@ -32,7 +32,7 @@ export const fetchBasicAnimeData = async (sortType) => {
 export const fetchPaginatedAnimeData = async (sortType, pageNo) => {
 	const query = gql`
     {
-      Page(perPage: 7, page: ${pageNo}) {
+      Page(perPage: 10, page: ${pageNo}) {
           media(sort: ${sortType}, type: ANIME, status: FINISHED) {
             id
             season
@@ -74,6 +74,7 @@ export const fetchAdvAnimeData = async (id) => {
         }
         title {
           english
+          romaji
           userPreferred
         }
       }
@@ -99,6 +100,7 @@ export const fetchAnimeRecommendations = async (id) => {
             title {
               english
               userPreferred
+              romaji
             }
             coverImage {
               large
@@ -130,6 +132,7 @@ export const fetchSearchResults = async (searchTerm) => {
         title {
           english
           userPreferred
+          romaji
         }
         coverImage {
           large

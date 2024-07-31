@@ -38,12 +38,7 @@ import { fetchSearchResults } from '$lib/scripts/utils/fetch';
 </script>
 
     
-    <div id="main" >
-      
-      <h1>
-        新大久保へようこそ
-      </h1>
-    </div>
+    
 
     
 
@@ -54,7 +49,13 @@ import { fetchSearchResults } from '$lib/scripts/utils/fetch';
       <div slot="title">Busqueda</div>
       {#each searchResults as results, i (i) }
         <ItemScroller img="{results.coverImage.large}" ep="{results.episodes}" score="{results.meanScore}">
-          {results.title.english}
+          {#if results.title.english}
+           {results.title.english}
+          {:else}
+          {results.title.romaji}
+          {/if}
+          
+          
         </ItemScroller>
       {/each}
     </Carousel>
