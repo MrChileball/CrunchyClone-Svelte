@@ -44,7 +44,7 @@
       {anime.title.english}
     </ItemScroller>
     {/each}
-    <button on:click={() => {nextPage()}}></button>
+    <button class="loadScrollerContent" on:click={() => {nextPage()}}></button>
 
 
     

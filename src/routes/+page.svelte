@@ -10,30 +10,6 @@ import { fetchSearchResults } from '$lib/scripts/utils/fetch';
     import TrendingSerie from '$lib/componets/categories/trendingSerie.svelte';
 
 
-   let query = "";
-
-   $: console.log(query);
-
-   let searchResults =[];
-
-   
-
-    const searchQuery = async () =>{
-      const res = await fetchSearchResults(query);
-      console.log(res);
-
-      searchResults = res;
-
-    }
-    function handleKeyPress(event) {
-    if (event.key == 'Enter') {
-      searchQuery();
-    }
-  }
-    $: {
-    //ejecuta la función al arrancar la página
-        searchQuery();
-    }
   
 </script>
 

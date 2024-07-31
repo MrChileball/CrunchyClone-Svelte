@@ -1,7 +1,7 @@
 
 <script>
 // @ts-nocheck
-
+    export let data;
     import { onMount } from "svelte";
     import "../styles/app.css";
     import Navbar from "$lib/componets/sections/navbar.svelte";
@@ -22,23 +22,23 @@
 
     });
     */
-    export let data;
+    
 
 
 </script>
 
 
+
+
+    
+        <Navbar></Navbar>
 {#key data.url}
 
-    <div 
-    in:fly="{{ y: -50, duration: 250, delay: 300 }}"
-    out:fly="{{ y: -50, duration: 250 }}" 
-    >
-        <Navbar></Navbar>
-        <div class="base">
+        <div class="base" in:fly={{ x: -200, duration: 300, delay: 300}}
+        out:fly={{ duration: 300}} >
             <slot></slot>
         </div>
-    </div>
+
 
 {/key}
 
